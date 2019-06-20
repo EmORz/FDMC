@@ -1,0 +1,19 @@
+﻿@using FDMC.Model;
+
+@model IEnumerable<FDMC.App.Models.ViewModels.CatConcseViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to FDMC!</h1>
+    <ul>
+        @foreach (var cat in Model)
+        {
+            <li>
+                <a asp-controller="Cats" asp-action="Details" asp-route-id="@cat.Id">@cat.Name</a>
+            </li>
+        }
+    </ul>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
